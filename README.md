@@ -7,14 +7,6 @@ A full-stack real-time messaging application built with the MERN stack, featurin
 **Demo Link**: [MyChat](https://my-chat-6blp.onrender.com) 
 
 > **⚠️ Please Note**: The backend is hosted on a free service which spins down after inactivity. Your first request may take up to a minute to load as the server starts up.
->
-```
-Previously, JWT cookies were blocked on iOS Safari/Chrome because 
-frontend and backend were on different domains. 
-Now both are deployed on the same server, so cookies work as first-party 
-and login works across all devices.
-```
-
 
 ## Project Overview
 

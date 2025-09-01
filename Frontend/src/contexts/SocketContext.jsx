@@ -25,8 +25,6 @@ export const SocketProvider = ({ children }) => {
       ? window.location.origin // Connect to same domain in production
       : import.meta.env.VITE_BACKEND_URL;
 
-      // console.log(socketUrl)
-
       // Initialize socket connection
       const newSocket = io(socketUrl, {
         withCredentials: true,
