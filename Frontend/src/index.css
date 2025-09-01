@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box
+}
+
+@import "tailwindcss";
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --primary: #801ec7;
+  --secondary: #9ACD32;
+  --hoverSecondary: #7BA428;
+  --tableNth: #ecfcca;
+  --background: rgba(245, 245, 220, 0.95);
+  --middleColor: rgba(255, 255, 255, 0.8);
+  --buttonShadow: rgba(154, 205, 50, 0.3);
+  --buttonShadow2: rgba(154, 205, 50, 0.2);
+  --toast: #c675ff;
+}
+
+.dark {
+  --black: #ffffff;
+  --white: #000000;
+  --primary: #1d698a;
+  --background: #253e4c;
+  --tableNth: #355161;
+  --secondary: oklch(74.6% 0.16 232.661);
+  --hoverSecondary: oklch(56.098% 0.11565 232.836);
+  --middleColor: rgb(255, 255, 255);
+  --buttonShadow: rgba(50, 161, 205, 0.3);
+  --buttonShadow2: rgba(50, 174, 205, 0.2);
+  --toast: #65d1ff;
+}
+
+@theme inline {
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-primary: var(--primary);
+  --color-hoverPrimary: var(--hoverPrimary);
+  --color-secondary: var(--secondary);
+  --color-hoverSecondary: var(--hoverSecondary);
+  --color-tableNth: var(--tableNth);
+  --color-background: var(--background);
+  --color-middleColor: var(--middleColor);
+  --color-buttonShadow: var(--buttonShadow);
+  --color-buttonShadow2: var(--buttonShadow2);
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Create smooth transitioning background layers */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 1.8s ease-in-out;
+}
+
+/* Light mode gradient */
+body::before {
+  background: linear-gradient(135deg, rgba(245, 245, 220, 0.95) 0%, rgba(255, 255, 255, 0.8) 50%, #801ec7 100%);
+  opacity: 1;
+}
+
+/* Dark mode gradient */
+body::after {
+  background: linear-gradient(135deg, #253e4c 10%, rgba(106, 114, 130, 0.8) 100%, #9d4edd 100%);
+  opacity: 0;
+}
+
+/* Toggle opacity for smooth transition */
+.dark body::before {
+  opacity: 0;
+}
+
+.dark body::after {
+  opacity: 1;
+}
