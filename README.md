@@ -161,7 +161,7 @@ MyChat is a modern, feature-rich chat application that enables users to communic
          ▼                       ▼                       ▼
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   Deployment    │    │   External      │    │   Cloud         │
-│   - Vercel      │    │   Services      │    │   Services      │
+│   - Render      │    │   Services      │    │   Services      │
 │   - Static      │    │   - Render      │    │   - Atlas       │
 │   - CDN         │    │   - APIs        │    │   - Backup      │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
