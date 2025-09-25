@@ -1,6 +1,6 @@
 # MyChat - Real-Time Chat Application
 
-A full-stack real-time messaging application built with the MERN stack, featuring secure authentication, file sharing, and responsive design.
+A full-stack real-time messaging application built with the MERN stack, featuring secure authentication, file sharing, comprehensive notification system and responsive design.
 
 ## Live Demo
 
@@ -10,7 +10,7 @@ A full-stack real-time messaging application built with the MERN stack, featurin
 
 ## Project Overview
 
-MyChat is a modern, feature-rich chat application that enables users to communicate in real-time. The application provides a seamless messaging experience with user authentication, profile management, file sharing capabilities, and administrative controls. Built with scalability and user experience in mind, MyChat offers a responsive design that works across all devices with light and dark mode theme.
+MyChat is a modern, feature-rich chat application that enables users to communicate in real-time. The application provides a seamless messaging experience with user authentication, profile management, notification system, file sharing capabilities, and administrative controls. Built with scalability and user experience in mind, MyChat offers a responsive design that works across all devices with light and dark mode theme.
 
 ## Technology Used
 
@@ -62,6 +62,12 @@ MyChat is a modern, feature-rich chat application that enables users to communic
 - Send text messages and file attachments
 - Real-time message delivery and status updates
 
+### Notification System
+- **Real-time Notifications**: Instant notification delivery for new messages and system events
+- **Smart Notification Management**: Automatic notification clearing when messages are read
+- **Notification Persistence**: Server-side notification storage and retrieval
+- **Unread Message Indicators**: Visual badges showing unread message counts
+
 ### Conversation Management
 - Conversation creation between users
 - Delete conversations (creator and participants)
@@ -75,6 +81,8 @@ MyChat is a modern, feature-rich chat application that enables users to communic
 - Toast notifications for real-time user feedback and alerts
 - Intuitive user interface
 - Real-time updates without page refresh
+- Smart notification sound alerts (optional)
+
 
 ## Getting Started
 
@@ -232,9 +240,9 @@ Chat-Application/
 
 ## Conclusion
 
-MyChat demonstrates a complete full-stack development approach using modern web technologies. The application successfully integrates real-time communication, secure authentication, file handling, and responsive design principles. With its scalable architecture deployed across reliable cloud services, MyChat provides a solid foundation for a production-ready messaging platform.
+MyChat demonstrates a complete full-stack development approach using modern web technologies with a sophisticated real-time notification system. The application successfully integrates real-time communication, comprehensive notification management, secure authentication, file handling, and responsive design principles. With its scalable architecture deployed across reliable cloud services, MyChat provides a solid foundation for a production-ready messaging platform.
 
-The project showcases proficiency in the MERN stack, real-time web technologies, cloud services integration, and modern development practices including form validation, security implementation, and responsive design.
+The project showcases proficiency in the MERN stack, real-time web technologies, advanced notification systems, cloud services integration, and modern development practices including form validation, security implementation, and responsive design.
 
 ## Contact
 
