@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import moment from "moment";
+import axios from 'axios';
 
 import '../Styles/chatmessagebox.css';
 import ChatFrom from './ChatFrom';
+import { useNotification } from '../contexts/NotificationContext';
 
 function MessageContainer({
   current_conversation_id,
@@ -17,6 +19,7 @@ function MessageContainer({
   typingUser,
   deleteConversation
 }) {
+  const { fetchNotifications } = useNotification();
   const chatListRef = useRef(null);
 
   const [message, setMessage] = useState('');
@@ -27,6 +30,36 @@ function MessageContainer({
       chatListRef.current.scrollTop = chatListRef.current.scrollHeight;
     }
   }, [messageData, isTyping]);
+
+  // Mark messages as seen when displayed
+  useEffect(() => {
+    if (current_conversation_id && messageData.length > 0) {
+      const unreadMessages = messageData.filter(
+        msg => !msg.seen && msg.sender.id !== currentUser.userid
+      );
+      
+      if (unreadMessages.length > 0) {
+        // Mark messages as seen
+        const markMessagesAsSeen = async () => {
+          try {
+            // Get IDs of unread messages
+            const messageIds = unreadMessages.map(msg => msg._id);
+            console.log(messageIds)
+            
+            // Call API to mark messages as seen
+            await axios.patch(`/api/messages/mark-seen`, { messageIds });
+            
+            // Refresh notifications
+            fetchNotifications();
+          } catch (error) {
+            console.error('Error marking messages as seen:', error);
+          }
+        };
+        
+        markMessagesAsSeen();
+      }
+    }
+  }, [messageData]);
 
   // Handle input change with typing indicator
   const handleInputChange = (e) => {

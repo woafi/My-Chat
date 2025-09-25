@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import ResetPassword from './pages/ResetPassword';
 import NotFound from "./pages/NotFoundPage";
+import Notifications from "./pages/Notifications";
 
 function AppRoutes() {
   return (
@@ -24,12 +25,12 @@ function AppRoutes() {
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/user" element={<Users />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/notifications" element={<Notifications />} />
         </Route>
       </Route>
 
       {/* Catch-all 404 Route */}
       <Route path="*" element={<NotFound />} />
-
     </Routes>
   );
 }

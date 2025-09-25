@@ -11,6 +11,7 @@ const cors = require('cors');
 const loginRouter = require("./routers/loginRouter");
 const usersRouter = require("./routers/usersRouter");
 const inboxRouter = require("./routers/inboxRouter");
+const notificationRouter = require("./routers/notificationRouter");
 const app = express();
 const server = http.createServer(app);
 dotenv.config();
@@ -107,6 +108,7 @@ app.use("/api/auth/check", loginRouter);
 app.use("/api/signup", usersRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/inbox", inboxRouter);
+app.use("/api/messages", notificationRouter);
 app.use("/api/verify-reset-token", usersRouter);
 
 // Serve static files from React build in production

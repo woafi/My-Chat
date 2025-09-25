@@ -27,7 +27,7 @@ function Conversation({ conversion = [], currentUser, handleGetMessage, current_
                         return (
                             <div
                                 key={item._id}
-                                onClick={() => handleGetMessage(item._id, user.name, user.avatar)}
+                                onClick={() => handleGetMessage(item._id, user)}
                                 className={`px-2 py-3 flex items-center hover:bg-gray-100 hover:text-[#000000] cursor-pointer transition-all mb-1 ${isSelected ? 'bg-gray-100 text-[#000000]' : 'text-black'} flex flex-col sm:flex-row rounded-lg text-[12px] sm:text-base`}
                             >
                                 <div className="rounded-full w-12 h-12 mx-2 bg-secondary overflow-hidden flex justify-center items-center">

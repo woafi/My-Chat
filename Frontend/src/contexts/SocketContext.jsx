@@ -21,7 +21,7 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (currentUser && currentUser.userid) {
 
-      const socketUrl = process.env.NODE_ENV === 'production'
+      const socketUrl = import.meta.env.VITE_ENV === 'production'
       ? window.location.origin // Connect to same domain in production
       : import.meta.env.VITE_BACKEND_URL;
 

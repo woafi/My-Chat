@@ -71,6 +71,11 @@ export function AuthProvider({ children }) {
 
             // Check auth status after successful signup
             await checkAuthStatus();
+            
+            // Trigger notification fetch after successful signup
+            const event = new CustomEvent('user-logged-in');
+            window.dispatchEvent(event);
+            
             return result;
         } catch (error) {
             console.error('Signup error:', error);
@@ -104,6 +109,11 @@ export function AuthProvider({ children }) {
 
             // Check auth status after successful login
             await checkAuthStatus();
+            
+            // Trigger notification fetch after successful login
+            const event = new CustomEvent('user-logged-in');
+            window.dispatchEvent(event);
+            
             return result;
         } catch (error) {
             console.error('Login error:', error);

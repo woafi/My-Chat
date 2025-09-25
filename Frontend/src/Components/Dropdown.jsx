@@ -78,7 +78,7 @@ const AnimatedDropdown = () => {
                 item.action();
                 setIsOpen(false);
               }}
-              className="w-full text-left px-4 py-3 text-black hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150 ease-in-out focus:outline-none"
+              className="w-full font-bold cursor-pointer text-left px-4 py-3 text-black hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150 ease-in-out focus:outline-none"
             >
               {item.label}
             </button>

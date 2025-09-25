@@ -2,6 +2,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import AppRoutes from "./Components/AppRoutes";
 import { AuthProvider } from "./contexts/AuthContext";
 import { SocketProvider } from "./contexts/SocketContext";
+import { NotificationProvider } from "./contexts/NotificationContext";
 import { HelmetProvider } from "@dr.pogodin/react-helmet";
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
       <Router>
         <AuthProvider>
           <SocketProvider>
-            <AppRoutes />
+            <NotificationProvider>
+              <AppRoutes />
+            </NotificationProvider>
           </SocketProvider>
         </AuthProvider>
       </Router>

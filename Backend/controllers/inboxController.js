@@ -141,7 +141,7 @@ async function deleteConversation(req, res, next) {
 }
 
 //get messages of a conversation
-async function getMessages(req, res, next) {
+async function getMessages(req, res) {
   try {
     const messages = await Message.find({
       conversation_id: req.params.conversation_id,
@@ -182,7 +182,6 @@ async function sendMessage(req, res) {
           }
         });
       }
-
       const newMessage = new Message({
         text: req.body.message,
         attachment: req.body.attachment || null,
@@ -197,6 +196,7 @@ async function sendMessage(req, res) {
           avatar: req.body.avatar || null,
         },
         conversation_id: req.body.conversationId,
+        seen: false, // Mark new messages as unseen by default
       });
 
       const result = await newMessage.save();

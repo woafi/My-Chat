@@ -105,7 +105,7 @@ function Inbox() {
 
   
   // Get messages of a conversation
-  async function getMessage(conversation_id, current_conversation_name, current_conversation_avatar) {
+  async function getMessage(conversation_id, receiver ) {
     try {
       const response = await fetch(`/api/inbox/messages/${conversation_id}`, {
         credentials: 'include',
@@ -114,11 +114,10 @@ function Inbox() {
 
       if (!result.errors && result.data) {
         const { data } = result;
-
-        setParticipant(data.participant);
+        setParticipant(receiver);
         setCurrent_conversation_id(conversation_id);
-        setCurrent_conversation_name(current_conversation_name);
-        setCurrent_conversation_avatar(current_conversation_avatar);
+        setCurrent_conversation_name(receiver.name);
+        setCurrent_conversation_avatar(receiver.avatar);
 
         // Set messages
         if (data.messages) {
